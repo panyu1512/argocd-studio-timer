@@ -3,11 +3,9 @@ kind: Service
 metadata:
   name: studio-timer-service
 spec:
-  type: NodePort
   selector:
     app: studio-timer
   ports:
-    - port: 80
-      protocol: TCP
-      targetPort: 80
-      nodePort: 31000
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
