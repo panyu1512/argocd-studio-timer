@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: studio-timer
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: studio-timer
+  template:
+    metadata:
+      labels:
+        app: studio-timer
+    spec:
+      containers:
+      - name: studio-timer
+        image: panyu1512/studio-timer:latest
+        ports:
+        - containerPort: 80
