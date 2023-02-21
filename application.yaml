@@ -9,5 +9,12 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: studio-timer
     repoURL: https://github.com/panyu1512/argocd-studio-timer.git
+    targetRevision: HEAD
+    path: dev
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
