@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: studio-timer
+  namespace: argocd
+spec:
+  destination:
+    namespace: studio-timer
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: studio-timer
+    repoURL: https://github.com/panyu1512/argocd-studio-timer.git
